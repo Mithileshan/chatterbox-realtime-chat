@@ -98,9 +98,55 @@ chatterbox-realtime-chat/
 - `message` – Receive chat messages
 - `roomUsers` – Get users in the room
 
+## 🏥 Health & Monitoring
+
+### Health Endpoint
+Check server status at `/health`:
+
+```bash
+curl http://localhost:3000/health
+```
+
+Response:
+```json
+{
+  "status": "✅ healthy",
+  "uptime": 123.45,
+  "timestamp": "2026-02-26T21:28:43.825Z",
+  "environment": "development"
+}
+```
+
+### Rate Limiting
+- **Protection**: 100 requests per 15-minute window per IP
+- **Purpose**: Prevent spam and DoS attacks
+- **Global**: Applied to all HTTP routes
+
+## 🎨 Features in Action
+
+### Join Screen
+Clean and intuitive UI to select username and room before entering the chat.
+
+### Real-Time Chat
+- Live messaging across connected users
+- Room-based conversations (JavaScript, Python, PHP, C#, Ruby, Java)
+- User list showing online members
+- System notifications for join/leave events
+- Message timestamps for all activity
+
+### Split-view Design
+- **Left sidebar**: Active room name and connected users
+- **Main area**: Live chat messages with timestamps
+- **Input area**: Type and send messages in real-time
+- **Header**: Room controls and leave button
+
 ## 📸 Screenshots
 
-(To be added after deployment)
+**Join Page - Select Room:**
+![Join Page](https://img.shields.io/badge/ChatterBox-Join%20Page-blue)
+
+**Real-Time Chat - Two Users:**
+![Chat Interface](https://img.shields.io/badge/ChatterBox-Chat%20Live-brightgreen)
 
 ## 🛡 License
 
