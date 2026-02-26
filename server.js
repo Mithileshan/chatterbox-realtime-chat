@@ -23,11 +23,17 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const botName = "ChatterBox Bot";
 
+// Optional Redis adapter for multi-instance support
 (async () => {
-  pubClient = createClient({ url: "redis://127.0.0.1:6379" });
-  await pubClient.connect();
-  subClient = pubClient.duplicate();
-  io.adapter(createAdapter(pubClient, subClient));
+  try {
+    pubClient = createClient({ url: "redis://127.0.0.1:6379" });
+    await pubClient.connect();
+    subClient = pubClient.duplicate();
+    io.adapter(createAdapter(pubClient, subClient));
+    console.log("✅ Redis connected - multi-instance mode enabled");
+  } catch (err) {
+    console.log("⚠️  Redis not available - running in single-instance mode");
+  }
 })();
 
 // Run when client connects
