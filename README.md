@@ -122,39 +122,9 @@ Response:
 - **Purpose**: Prevent spam and DoS attacks
 - **Global**: Applied to all HTTP routes
 
-## 🎨 Features in Action
-
-### Join Screen
-Clean and intuitive UI to select username and room before entering the chat.
-
-### Real-Time Chat
-- Live messaging across connected users
-- Room-based conversations (JavaScript, Python, PHP, C#, Ruby, Java)
-- User list showing online members
-- System notifications for join/leave events
-- Message timestamps for all activity
-
-### Split-view Design
-- **Left sidebar**: Active room name and connected users
-- **Main area**: Live chat messages with timestamps
-- **Input area**: Type and send messages in real-time
-- **Header**: Room controls and leave button
-
-## 📸 Screenshots
-
-**Join Page - Select Room:**
-![Join Page](https://img.shields.io/badge/ChatterBox-Join%20Page-blue)
-
-**Real-Time Chat - Two Users:**
-![Chat Interface](https://img.shields.io/badge/ChatterBox-Chat%20Live-brightgreen)
-
 ## 🛡 License
 
 MIT License
-
-## 📝 Credits
-
-Initial scaffold adapted from **bradtraversy/chatcord**. This version includes portfolio-focused modifications, UI improvements, and is prepared for production enhancements.
 
 ---
 
