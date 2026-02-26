@@ -127,12 +127,12 @@ Response:
 ### Join Page - Select Room
 Users can select their username and choose from available chat rooms (JavaScript, Python, PHP, C#, Ruby, Java) before joining the chat.
 
-![ChatterBox Join Page](./screenshots/join_page.png)
+![ChatterBox Join Page](https://raw.githubusercontent.com/Mithileshan/chatterbox-realtime-chat/main/screenshots/join_page.jpeg)
 
 ### Real-Time Chat - Two Users
 Live messaging interface showing active users in a room, message history with timestamps, and real-time message delivery between participants.
 
-![ChatterBox Chat Live](./screenshots/chat_live.png)
+![ChatterBox Chat Live](https://raw.githubusercontent.com/Mithileshan/chatterbox-realtime-chat/main/screenshots/chat_live.jpeg)
 
 ## �🛡 License
 
