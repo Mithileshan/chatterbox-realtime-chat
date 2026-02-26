@@ -122,7 +122,15 @@ Response:
 - **Purpose**: Prevent spam and DoS attacks
 - **Global**: Applied to all HTTP routes
 
-## 🛡 License
+## � Screenshots
+
+### Join Page - Select Room
+Users can select their username and choose from available chat rooms (JavaScript, Python, PHP, C#, Ruby, Java) before joining the chat.
+
+### Real-Time Chat - Two Users
+Live messaging interface showing active users in a room, message history with timestamps, and real-time message delivery between participants.
+
+## �🛡 License
 
 MIT License
 
