@@ -2,6 +2,7 @@ const path = require("path");
 const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
+const rateLimit = require("express-rate-limit");
 const formatMessage = require("./utils/messages");
 const createAdapter = require("@socket.io/redis-adapter").createAdapter;
 const redis = require("redis");
@@ -18,8 +19,28 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
+// Rate limiting middleware - limit requests to prevent spam
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: "Too many requests from this IP, please try again later."
+});
+
 // Set static folder
 app.use(express.static(path.join(__dirname, "public")));
+
+// Apply rate limiter to all requests
+app.use(limiter);
+
+// Health check endpoint
+app.get("/health", (req, res) => {
+  res.json({
+    status: "✅ healthy",
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || "development"
+  });
+});
 
 const botName = "ChatterBox Bot";
 
